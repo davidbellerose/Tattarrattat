@@ -1,5 +1,6 @@
 @use 'colors';
 @use '_footer';
+@use 'prism';
 
 
 body{
@@ -21,7 +22,7 @@ main .container {
 }
 
 .checklist>li i{
-   color: var(--secondary-color);
+   color: #ff7f2a;
 }
 
 .project-icons img{
@@ -29,7 +30,6 @@ main .container {
   width: auto;
 }
 
-// prism custom css
 code[class*="language-"],
 pre[class*="language-"] {
 white-space: pre-wrap;

@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By David Bellerose</title>
+    <title>TATTARRATTAT: A Coding Project By David Bellerose</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,8 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <link href="assets/vendor/prism/prism.css" rel="stylesheet">
-        <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/img/favicon_a.svg" rel="icon">
     <script src="https://kit.fontawesome.com/45e2949365.js" crossorigin="anonymous"></script>
 </head>
@@ -20,7 +19,7 @@
 <!-- NAV  -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="assets/img/favicon_a.svg" class="d-inline-block align-text-top me-2">APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="assets/img/favicon_a.svg" class="d-inline-block align-text-top me-2">TATTARRATTAT</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,39 +49,86 @@
 <!-- MAIN -->
 <main class="flex-shrink-0 mt-5">
   <div class="container py-4 px-5 mt-5">
-    <h2 class="border-1 border-bottom border-dark">The Code for App Name</h2>
+    <h2 class="border-1 border-bottom border-dark">The Code for TATTARRATTAT</h2>
     <div class="row row-cols-1 row-cols-lg-2">
         <div class="col-lg-8">
             <pre class="line-numbers">
                 <code class="language-javascript">
-                    // test function ;&lt;
-                    function one(){
-                        alert("one")
-                    }
+// Add event listener for the Reverse button
+document.getElementById("btnSubmit").addEventListener("click", getValue);
+
+// Get string from the input field
+// Controller function
+function getValue() {
+    document.getElementById("alert").classList.add("invisible");
+    let userString = document.getElementById("userString").value;
+
+    // Pass the userString to the reverseString helper function
+    let revString = reverseString(userString);
+
+    // Pass the revString to the displayString helper function
+    displayString(revString);
+}
+
+// Revers the string
+// Logic function
+function reverseString(userString) {
+    let revString = [];
+    let result = "";
+
+    // check if less than 2 letters
+    if (userString.length &lt; 2) {
+    alert("Please enter at least 2 characters");
+    } else {
+    //  A for loop to iterate through the string from back to front
+    //      and concatenate them into the revString variable
+    for (let i = userString.length - 1; i >= 0; i--) {
+        revString += userString[i];
+    }
+    }
+    // Compare the two string to see if it is a palindrome
+    if(revString === userString){
+    result = `"&lt;b>${userString}&lt;/b>" is a Palindrome`;
+    }else {
+    result = `"&lt;b>${userString}&lt;/b>" is not a Palindrome`;;
+    }
+    return result;
+}
+
+// Display the reversed string on the page
+// View function
+function displayString(result) {
+    document.getElementById("msg").innerHTML = result;
+    document.getElementById("alert").classList.remove("invisible");
+}                              
                 </code>
             </pre>
         </div>
-        <div class="col-lg-4"><h5>This code is structured in three functions.</h5>
+        <div class="col-lg-4">
+            <h5>This code is structured in three functions.</h5>
             <p>The first thing done was to add an event listener to the button so
                 the code will fire when the button is pressed.
             </p>
-            <p>The next getValues function gets the values from the number input fields,
-                 that being the Starting Number and Ending Number fields. It also makes
-                 a few checks to see if the numbers entered are valid. Finally it will
-                 call on a couple of "helper" functions explained below.
-            <p>The first helper function is called generateNumbers. This function will
-                generate a list of numbers in between and including the starting and 
-                ending numbers and put them into an array to be passed on later.
+            <p>The next getValue function gets the value from the text input field,
+                 then it will call on a couple of "helper" functions explained below.
             </p>
-            <p>The second helper function is called displayNumbers. This will take the
-                numbers in the array, put them in some html code, and then inject them
-                into the web page for display.
+            <p>The first helper function is called reverseString. This function will
+                first check to make sure at least two characters were entered.
+                Then it will loop through the characters entered in the text field backwards from
+                the last character to the first, and then concatenate them into a string.
+                The original string entered and the reversed version are compared to each other.
+                If they match, it is a palindrome. 
+                Finally it will pass on the results to the next displayString helper function.
             </p>
-            <p>So once the getValues function gets the values from the number fields and
-                checks to make sure those inputs are valid, it calls the generateNumbers
-                function to generate the numbers array, then it calls the displayNumbers
-                function to display the array passed on from the generateNumbers function
-                into the web page.
+            <p>The next helper function is called displayString. This will take the
+                string passed to it from the reverseString helper function and then inject it
+                into the web page for display. 
+            </p>
+            <p>In summary the getValue function gets the value from the text field, 
+                it calls the reverseString
+                function to reverse the text and compare it to the original string 
+                to see if it is a palindrome, then it calls the displayString
+                function to display the results on web page.
             </p>
             <h5>Please <a href="#" alt="Contact Me">contact me</a> if you have any questions and/or would like to discuss
                 my skill set and qualifications.

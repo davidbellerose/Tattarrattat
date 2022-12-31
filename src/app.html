@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By David Bellerose</title>
+    <title>TATTARRATTAT: A Coding Project By David Bellerose</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +19,7 @@
 <!-- NAV  -->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="assets/img/favicon_a.svg" class="d-inline-block align-text-top me-2">APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="assets/img/favicon_a.svg" class="d-inline-block align-text-top me-2">TATTARRATTAT</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -49,7 +49,45 @@
 
 <!-- MAIN -->
 <main class="flex-shrink-0 mt-5">
-  <div class="container"></div>
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col">
+            <h1 class="display-5 fw-bold 1h-1 mb-3">
+                TATTARRATTAT: A Coding Project
+            </h1>
+            <h4 class="lead">
+                A javascript coding exercise that checks if a word is a palindrome
+            </h4>
+            <p>The word "tattarrattat" is the longest palindrome in the english dictionary.
+                It means "a knock at the door", and comes from the novel "Ulysses" by James Joyce.
+            </p>
+            <ul>
+                <li>Enter a word or any series of characters in the "Enter A String field."</li>
+                <li>Click on the "Check It" button.</li>
+                <li>The result will tell you if it is a palindrome or not.</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h5 class="border-1 border-bottom border-primary pb-2 mt-3">
+                Enter A String To Check.
+            </h5>
+            <form class="row gx-3 gy-2">
+                <div class="col">
+                    <input type="text" id="userString" class="form-control mb-3 mt-2" placeholder="Enter a string" value="tattarrattat" aria-label="Enter a string.">
+                    <div class="col-12">
+                        <button type="button" id="btnSubmit" class="btn btn-primary">Check It!</button>
+                    </div>
+                    <div id="alert" class="alert alert-primary mt-5 invisible fade show">
+                        <h4 class="alert-heading">Results</h4>
+                        <hr>
+                        <p id="msg" class="mb-0"></p>
+                    </div>
+                </div>
+            </form>
+            <h5 id="codeLink"></h5>
+        </div>
+    </div>
+  </div>
 </main>
 <!-- END MAIN -->
 <!-- FOOTER -->
