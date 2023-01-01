@@ -18,7 +18,12 @@ function getValue() {
 // Logic function
 function reverseString(userString) {
   let revString = [];
-  let result = "";
+  let resultObj = {};
+
+  // Set the entered string to lower case and remove spaces and special characters
+  userString = userString.toLowerCase();
+  const regex = /[^a-z0-9]/gi;
+  userString = userString.replace(regex, "");
 
   // check if less than 2 letters
   if (userString.length < 2) {
@@ -30,19 +35,21 @@ function reverseString(userString) {
       revString += userString[i];
     }
   }
-  // Compare the two string to see if it is a palindrome
+  // Compare the two strings to see if it is a palindrome
   if(revString === userString){
-    result = `"<b>${userString}</b>" is a Palindrome`;
+    resultObj.msg = `"<b>${userString}</b>" is a palindrome`;
   }else {
-    result = `"<b>${userString}</b>" is not a Palindrome`;;
+    resultObj.msg = `"<b>${userString}</b>" is not a palindrome`;
   }
-  return result;
+  resultObj.rev = revString;
+  return resultObj;
 }
 
 // Display the reversed string on the page
 // View function
-function displayString(result) {
-  document.getElementById("msg").innerHTML = result;
+function displayString(resultObj) {
+  document.getElementById("msgHeader").innerHTML = resultObj.msg;
+  document.getElementById("msg").innerHTML = `Your phrase reversed is "<b>${resultObj.rev}</b>"`;
   document.getElementById("alert").classList.remove("invisible");
 
   let codeLink = document.getElementById("codeLink");

@@ -58,6 +58,9 @@
             <h4 class="lead">
                 A javascript coding exercise that checks if a word is a palindrome
             </h4>
+            <p>A palindrome is a word, phrase, or sequence that reads the same both
+                backwards and forwards. This app will check to see if the text entered is a palindrome.
+            </p>
             <p>The word "tattarrattat" is the longest palindrome in the english dictionary.
                 It means "a knock at the door", and comes from the novel "Ulysses" by James Joyce.
             </p>
@@ -65,6 +68,8 @@
                 <li>Enter a word or any series of characters in the "Enter A String field."</li>
                 <li>Click on the "Check It" button.</li>
                 <li>The result will tell you if it is a palindrome or not.</li>
+                <li>Spaces and special characters will be ignored.</li>
+                <li>You must enter at least two characters.</li>
             </ul>
         </div>
         <div class="col">
@@ -80,6 +85,7 @@
                     <div id="alert" class="alert alert-primary mt-5 invisible fade show">
                         <h4 class="alert-heading">Results</h4>
                         <hr>
+                        <p id="msgHeader"></p>
                         <p id="msg" class="mb-0"></p>
                     </div>
                 </div>
