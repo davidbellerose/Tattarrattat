@@ -1,7 +1,11 @@
-# JsSiteTemplate
-Js site template for js projects
+# Tattarrattat
 
-update nav and social links
-update contact link
-remove dist from .gitignore
-publish
+## A javascript app that reverses a string
+
+ - HTML
+ - CSS
+ - SASS
+ - Bootstrap
+ - Javascript
+ - NodeJs
+ 
