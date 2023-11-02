@@ -7,11 +7,16 @@ function getValue() {
   document.getElementById("alert").classList.add("invisible");
   let userString = document.getElementById("userString").value;
 
+  // check if less than 2 letters
+  if (userString.length < 2) {
+    alert("Please enter at least 2 characters");
+  } else {
   // Pass the userString to the reverseString helper function
   let revString = reverseString(userString);
 
   // Pass the revString to the displayString helper function
   displayString(revString);
+  }
 }
 
 // Revers the string
@@ -25,15 +30,11 @@ function reverseString(userString) {
   const regex = /[^a-z0-9]/gi;
   userString = userString.replace(regex, "");
 
-  // check if less than 2 letters
-  if (userString.length < 2) {
-    alert("Please enter at least 2 characters");
-  } else {
-    //  A for loop to iterate through the string from back to front
-    //      and concatenate them into the revString variable
-    for (let i = userString.length - 1; i >= 0; i--) {
-      revString += userString[i];
-    }
+
+//  A for loop to iterate through the string from back to front
+//      and concatenate them into the revString variable
+  for (let i = userString.length - 1; i >= 0; i--) {
+    revString += userString[i];
   }
   // Compare the two strings to see if it is a palindrome
   if(revString === userString){
